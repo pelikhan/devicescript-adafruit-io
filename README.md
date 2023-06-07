@@ -1,8 +1,36 @@
 # Adafruit.IO DeviceScript helper
 
-This project uses [DeviceScript](https://microsoft.github.io/devicescript/).
+This project is a [DeviceScript](https://microsoft.github.io/devicescript/) library.
+
+This project uses [Adafruit.io REST APIs](https://io.adafruit.com/api/docs/#create-data)
+to upload data.
 
 ## Setup
 
 Install this project to your DeviceScript project
 
+## Settings
+
+The APIs will read a default username, feed and key from the settings.
+
+```.env
+# env.defaults
+AIO_USER="user"
+AIO_FEED="feed"
+```
+
+```.env
+# env.local
+AIO_KEY="..."
+```
+
+## createData
+
+The createData function will upload a value to the Adafruit.io feed
+and return the HTTP status code.
+
+```ts
+const value = await temperature.reading.read()
+const status = await createData(value)
+console.log({ status })
+```
