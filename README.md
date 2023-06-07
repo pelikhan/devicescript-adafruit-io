@@ -9,6 +9,10 @@ to upload data.
 
 Install this project to your DeviceScript project
 
+```bash
+npm install --save pelikhan/devicescript-adafruit-io#v0.0.2
+```
+
 ## Settings
 
 The APIs will read a default username, feed and key from the settings.
