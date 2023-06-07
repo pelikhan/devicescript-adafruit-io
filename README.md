@@ -1,7 +1,8 @@
 # Adafruit.IO DeviceScript Client
 
-This project is a [DeviceScript](https://microsoft.github.io/devicescript/) library that [Adafruit.io REST APIs](https://io.adafruit.com/api/docs/#create-data)
-to upload data.
+This project is a [DeviceScript](https://microsoft.github.io/devicescript/) library that uses [Adafruit.io REST APIs](https://io.adafruit.com/api/docs/#create-data) to upload data.
+
+> Requires a microcontroller with network connectivity such as the [Adafruit QT Py C3](https://microsoft.github.io/devicescript/devices/esp32/adafruit-qt-py-c3).
 
 ## Setup
 
