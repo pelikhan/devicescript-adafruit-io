@@ -1,8 +1,6 @@
 # Adafruit.IO DeviceScript helper
 
-This project is a [DeviceScript](https://microsoft.github.io/devicescript/) library.
-
-This project uses [Adafruit.io REST APIs](https://io.adafruit.com/api/docs/#create-data)
+This project is a [DeviceScript](https://microsoft.github.io/devicescript/) library that [Adafruit.io REST APIs](https://io.adafruit.com/api/docs/#create-data)
 to upload data.
 
 ## Setup
@@ -15,7 +13,7 @@ npm install --save pelikhan/devicescript-adafruit-io#v0.0.2
 
 ## Settings
 
-The APIs will read a default username, feed and key from the settings.
+The APIs will read a default username, feed and key from the [settings](https://microsoft.github.io/devicescript/developer/settings).
 
 ```.env
 # env.defaults
