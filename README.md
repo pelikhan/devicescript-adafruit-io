@@ -1,4 +1,4 @@
-# Adafruit.IO DeviceScript helper
+# Adafruit.IO DeviceScript Client
 
 This project is a [DeviceScript](https://microsoft.github.io/devicescript/) library that [Adafruit.io REST APIs](https://io.adafruit.com/api/docs/#create-data)
 to upload data.
