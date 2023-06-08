@@ -18,13 +18,13 @@ The APIs will read a default username, feed and key from the [settings](https://
 
 ```.env
 # env.defaults
-AIO_USER=user
-AIO_FEED=feed
+IO_USER=user
+IO_FEED=feed
 ```
 
 ```.env
 # env.local
-AIO_KEY=...
+IO_KEY=...
 ```
 
 ## createData

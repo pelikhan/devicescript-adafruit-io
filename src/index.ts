@@ -2,12 +2,12 @@ import { fetch } from "@devicescript/net"
 import { readSetting } from "@devicescript/settings"
 
 // read configurations
-const defaultFeed = await readSetting("AIO_FEED")
-const defaultUser = await readSetting("AIO_USER")
-const defaultLat = await readSetting<number>("AIO_LAT")
-const defaultLon = await readSetting<number>("AIO_LON")
-const defaultEle = await readSetting<number>("AIO_ELE")
-const key = await readSetting("AIO_KEY")
+const defaultFeed = await readSetting("IO_FEED")
+const defaultUser = await readSetting("IO_USER")
+const defaultLat = await readSetting<number>("IO_LAT")
+const defaultLon = await readSetting<number>("IO_LON")
+const defaultEle = await readSetting<number>("IO_ELE")
+const key = await readSetting("IO_KEY")
 
 /**
  * Creates a data point in a Adafruit.io feed using
@@ -15,12 +15,12 @@ const key = await readSetting("AIO_KEY")
  *
  * This extension uses the following settings:
  *
- * - AIO_KEY: (required) access key
- * - AIO_FEED: feed name
- * - AIO_USER: io.adafruit.com user name
- * - AIO_LAT: (optional) latitude (as a number)
- * - AIO_LON: (optional) longitude (as a number)
- * - AIO_ELE: (optional) elevation (as a number)
+ * - IO_KEY: (required) access key
+ * - IO_FEED: feed name
+ * - IO_USER: io.adafruit.com user name
+ * - IO_LAT: (optional) latitude (as a number)
+ * - IO_LON: (optional) longitude (as a number)
+ * - IO_ELE: (optional) elevation (as a number)
  *
  * @param value numerical value to upload
  * @param options optional latitude longitude
@@ -36,13 +36,13 @@ export async function createData(
         ele?: number
     }
 ) {
-    if (!key) throw new Error("Adafruit.io: missing secret AIO_KEY")
+    if (!key) throw new Error("Adafruit.io: missing secret IO_KEY")
 
     const { feed, user, lat, lon, ele } = options || {}
     const u = user || defaultUser
-    if (!u) throw new Error("Adafruit.io: missing setting AIO_USER")
+    if (!u) throw new Error("Adafruit.io: missing setting IO_USER")
     const f = feed || defaultFeed
-    if (!f) throw new Error("Adafruit.io: missing setting AIO_FEED")
+    if (!f) throw new Error("Adafruit.io: missing setting IO_FEED")
 
     const la = lat || defaultLat
     const lo = lon || defaultLon

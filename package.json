@@ -1,7 +1,6 @@
 {
     "name": "devicescript-adafruit-io",
-    "version": "0.0.1",
-    "private": "Minimal adafruit.io REST APIs for DeviceScript",
+    "version": "0.0.3",
     "dependencies": {},
     "devDependencies": {
         "@devicescript/cli": "latest"
