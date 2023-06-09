@@ -35,6 +35,7 @@ The createData function will upload a value to the Adafruit.io feed
 and return the HTTP status code.
 
 ```ts
+import { createData } from "devicescript-adafruit-io"
 const value = await temperature.reading.read()
 const status = await createData(value)
 console.log({ status })
