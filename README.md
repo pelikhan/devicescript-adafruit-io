@@ -9,8 +9,10 @@ This project is a [DeviceScript](https://microsoft.github.io/devicescript/) libr
 Install this project to your DeviceScript project
 
 ```bash
-npm install --save pelikhan/devicescript-adafruit-io#v0.0.2
+npm install --save pelikhan/devicescript-adafruit-io#v...
 ```
+
+where `v...` is the current release
 
 ## Settings
 
