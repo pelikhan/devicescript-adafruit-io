@@ -1,14 +1,6 @@
 import { fetch } from "@devicescript/net"
 import { readSetting } from "@devicescript/settings"
 
-// read configurations
-const defaultFeed = await readSetting("IO_FEED")
-const defaultUser = await readSetting("IO_USER")
-const defaultLat = await readSetting<number>("IO_LAT")
-const defaultLon = await readSetting<number>("IO_LON")
-const defaultEle = await readSetting<number>("IO_ELE")
-const key = await readSetting("IO_KEY")
-
 /**
  * Creates a data point in a Adafruit.io feed using
  * the {@link https://io.adafruit.com/api/docs/#create-data | REST API}
@@ -36,17 +28,18 @@ export async function createData(
         ele?: number
     }
 ) {
+    const key = await readSetting("IO_KEY")
     if (!key) throw new Error("Adafruit.io: missing secret IO_KEY")
 
     const { feed, user, lat, lon, ele } = options || {}
-    const u = user || defaultUser
+    const u = user || await readSetting("IO_USER")
     if (!u) throw new Error("Adafruit.io: missing setting IO_USER")
-    const f = feed || defaultFeed
+    const f = feed || await readSetting("IO_FEED")
     if (!f) throw new Error("Adafruit.io: missing setting IO_FEED")
 
-    const la = lat || defaultLat
-    const lo = lon || defaultLon
-    const el = ele || defaultEle
+    const la = lat || await readSetting<number>("IO_LAT")
+    const lo = lon || await readSetting<number>("IO_LON")
+    const el = ele || await readSetting<number>("IO_ELE")
 
     const url = `https://io.adafruit.com/api/v2/${u}/feeds/${f}/data`
     const headers = { "X-AIO-Key": key, "Content-Type": "application/json" }
