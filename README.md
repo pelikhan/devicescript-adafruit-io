@@ -29,9 +29,9 @@ IO_FEED=feed
 IO_KEY=...
 ```
 
-## createData
+## createData (REST)
 
-The createData function will upload a value to the Adafruit.io feed
+The createData function will upload a value to the Adafruit.io feed using the REST APIs
 and return the HTTP status code.
 
 ```ts
