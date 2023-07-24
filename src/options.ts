@@ -1,4 +1,3 @@
-import { fetch } from "@devicescript/net"
 import { readSetting } from "@devicescript/settings"
 
 /**
