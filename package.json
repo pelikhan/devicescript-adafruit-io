@@ -1,7 +1,12 @@
 {
     "name": "devicescript-adafruit-io",
     "version": "0.0.3",
-    "dependencies": {},
+    "author": "pelikhan",
+    "license": "MIT",
+    "main": "./src/index.ts",
+    "devicescript": {
+        "library": true
+    },
     "devDependencies": {
         "@devicescript/cli": "latest"
     },
@@ -14,12 +19,8 @@
         "watch": "npm run watch:devicescript",
         "test:devicescript": "devicescript run src/main.ts --test --test-self-exit",
         "test": "npm run test:devicescript",
-        "start": "npm run watch"
-    },
-    "main": "./src/index.ts",
-    "license": "MIT",
-    "devicescript": {
-        "library": true
+        "start": "npm run watch",
+        "build:docs": "npx typedoc ./src/index.ts --tsconfig ./src/tsconfig.json"
     },
     "files": [
         "src/*.ts",
@@ -28,5 +29,8 @@
     "keywords": [
         "devicescript"
     ],
-    "author": "pelikhan <jhalleux@microsoft.com>"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pelikhan/devicescript-adafruit-io"
+    }
 }

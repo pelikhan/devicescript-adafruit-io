@@ -1,0 +1,29 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/tsdoc/v0/tsdoc.schema.json",
+    "extends": [
+        "typedoc/tsdoc.json"
+    ],
+    "noStandardTags": false,
+    "tagDefinitions": [
+        {
+            "tagName": "@devsPart",
+            "syntaxKind": "modifier"
+        },
+        {
+            "tagName": "@devsServices",
+            "syntaxKind": "modifier"
+        },
+        {
+            "tagName": "@devsStart",
+            "syntaxKind": "modifier"
+        },
+        {
+            "tagName": "@devsWhenUsed",
+            "syntaxKind": "modifier"
+        },
+        {
+            "tagName": "@devsNative",
+            "syntaxKind": "modifier"
+        }
+    ]
+}
