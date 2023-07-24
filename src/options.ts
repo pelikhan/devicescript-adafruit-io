@@ -13,8 +13,14 @@ export interface FeedOptions {
 
 /**
  * Merges the passed options and the options in the settings
+ * - IO_KEY: (required) access key
+ * - IO_FEED: feed name
+ * - IO_USER: io.adafruit.com user name
+ * - IO_LAT: (optional) latitude (as a number)
+ * - IO_LON: (optional) longitude (as a number)
+ * - IO_ELE: (optional) elevation (as a number)
  * @param options
- * @returns a valid option object
+ * @returns a valid option object, including the key
  * @throws Error missing user or feed information
  */
 export async function loadOptions(
