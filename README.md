@@ -29,14 +29,38 @@ IO_FEED=feed
 IO_KEY=...
 ```
 
-## createData (REST)
+This extension uses the following settings:
 
-The createData function will upload a value to the Adafruit.io feed using the REST APIs
-and return the HTTP status code.
+-   IO_KEY: (required) access key
+-   IO_FEED: feed name
+-   IO_USER: io.adafruit.com user name
+-   IO_LAT: (optional) latitude (as a number)
+-   IO_LON: (optional) longitude (as a number)
+-   IO_ELE: (optional) elevation (as a number)
+
+## REST
+
+The createData function will upload a value to the Adafruit.io feed using the [REST APIs](https://io.adafruit.com/api/docs/#create-data) and return the HTTP status code.
 
 ```ts
 import { createData } from "devicescript-adafruit-io"
 const value = await temperature.reading.read()
 const status = await createData(value)
 console.log({ status })
+```
+
+## MQTT
+
+This API connects to the [MQTT](https://io.adafruit.com/api/docs/mqtt.html#adafruit-io-mqtt-api)
+broker and let's you publish sensor data through the feed topics.
+
+```ts
+import {
+    publishData,
+    startAdafruitIOMQTTClient,
+} from "devicescript-adafruit-io"
+
+const client = await startAdafruitIOMQTTClient()
+
+await publishData(client, 456)
 ```
