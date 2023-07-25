@@ -18,7 +18,6 @@ export async function startAdafruitIOMQTTClient(options?: UserOptions) {
         host: "io.adafruit.com",
         port: 8883,
     })
-    ;(client as any).__user = user
     return client
 }
 
@@ -33,7 +32,7 @@ export async function publishData(
     options?: FeedOptions
 ) {
     const { feed, lon, lat, ele } = await loadFeedOptions(options)
-    const user = (client as any).__user as string
+    const user = client.opt.username
     const topic = `${user}/f/${feed}/json`
     const payload: any = { value }
     if (lon !== undefined) payload.lon = lon
