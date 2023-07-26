@@ -10,7 +10,7 @@ export interface UserOptions {
 /**
  * Merges the passed options and the options in the settings
  * - IO_KEY: (required) access key
- * - IO_USER: io.adafruit.com user name
+ * - IO_USERNAME: io.adafruit.com user name
  * @param options
  * @returns a valid option object, including the key
  * @throws Error missing user or feed information
@@ -21,8 +21,11 @@ export async function loadUserOptions(
     const key = await readSetting("IO_KEY")
     if (!key) throw new Error("Adafruit.io: missing secret IO_KEY")
     let { user } = options || {}
-    user = user || (await readSetting("IO_USER"))
-    if (!user) throw new Error("Adafruit.io: missing setting IO_USER")
+    user =
+        user ||
+        (await readSetting("IO_USERNAME")) ||
+        (await readSetting("IO_USER"))
+    if (!user) throw new Error("Adafruit.io: missing setting IO_USERNAME")
     return { user, key }
 }
 

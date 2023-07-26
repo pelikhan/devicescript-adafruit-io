@@ -20,7 +20,7 @@ The APIs will read a default username, feed and key from the [settings](https://
 
 ```.env
 # env.defaults
-IO_USER=user
+IO_USERNAME=user
 IO_FEED=feed
 ```
 
@@ -33,7 +33,7 @@ This extension uses the following settings:
 
 -   IO_KEY: (required) access key
 -   IO_FEED: feed name
--   IO_USER: io.adafruit.com user name
+-   IO_USERNAME: io.adafruit.com user name
 -   IO_LAT: (optional) latitude (as a number)
 -   IO_LON: (optional) longitude (as a number)
 -   IO_ELE: (optional) elevation (as a number)
