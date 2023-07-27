@@ -7,6 +7,7 @@
 
 ```bash
 npm version patch
-git push --all
+git push
+git push --tags
 gh release create --generate-notes
 ```
